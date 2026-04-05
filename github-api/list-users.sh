@@ -1,4 +1,10 @@
 #!/bin/bash
+########################################################################################
+#About : This script is for to get users lilst from you repo who has access to your repo
+#Input : This script need two command line argument which are repo Username & User Token
+#Date : 05/Apr/2026
+#Follow the instruction get expected output/ Helper function will excute if any error occurd while execute you script.
+########################################################################################
 
 # GitHub API URL
 API_URL="https://api.github.com"
@@ -34,6 +40,13 @@ function list_users_with_read_access {
         echo "Users with read access to ${REPO_OWNER}/${REPO_NAME}:"
         echo "$collaborators"
     fi
+}
+
+function helperFunction{
+    expected_cmd_argu=2
+    if[$# -ne expected_cmd_argu]; then
+    echo "Please execute the script with required info like with export cmd user name"
+    echo "Then Please execute the script with user token with correct syntax"
 }
 
 # Main script
